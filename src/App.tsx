@@ -1,11 +1,11 @@
 import React from "react";
 
-import { Projectlist } from "screens/project-list";
+import { ProjectList } from "screens/project-list";
 
 function App() {
   return (
     <div className="App">
-      <Projectlist />
+      <ProjectList />
     </div>
   );
 }

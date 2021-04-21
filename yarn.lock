@@ -1954,6 +1954,11 @@
   resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/@types/q/-/q-1.5.4.tgz#15925414e0ad2cd765bfef58842f7e26a7accb24"
   integrity sha1-FZJUFOCtLNdlv+9YhC9+JqesyyQ=
 
+"@types/qs@^6.9.6":
+  version "6.9.6"
+  resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/@types/qs/-/qs-6.9.6.tgz#df9c3c8b31a247ec315e6996566be3171df4b3b1"
+  integrity sha1-35w8izGiR+wxXmmWVmvjFx30s7E=
+
 "@types/react-dom@^17.0.0":
   version "17.0.3"
   resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/@types/react-dom/-/react-dom-17.0.3.tgz#7fdf37b8af9d6d40127137865bb3fff8871d7ee1"
