@@ -19,9 +19,11 @@ export const login = (data: { username: string; password: string }) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(data),
-  }).then(async (res) => {
+  }).then(async (res: Response) => {
     if (res.ok) {
-      handleUserResponse(await res.json());
+      return handleUserResponse(await res.json());
+    } else {
+      return Promise.reject(data);
     }
   });
 };
@@ -33,11 +35,14 @@ export const register = (data: { username: string; password: string }) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(data),
-  }).then(async (res) => {
+  }).then(async (res: Response) => {
     if (res.ok) {
-      handleUserResponse(await res.json());
+      return handleUserResponse(await res.json());
+    } else {
+      return Promise.reject(data);
     }
   });
 };
 
-export const logout = () => window.localStorage.removeItem(locakStorgeKey);
+export const logout = async () =>
+  window.localStorage.removeItem(locakStorgeKey);
