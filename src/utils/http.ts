@@ -50,8 +50,33 @@ export const http = async (
 };
 
 // 函数里要使用其他的hook，它本身也必须是一个hook
+// js typeof在runtime运行
+// ts typeof静态环境运行
 export const useHttp = () => {
   const { user } = useAuth();
+  // Parameters是ts的utility type（工具类类型中的一个）
+  // 常用工具类型有：Partial、Omit
   return (...[endPoint, config]: Parameters<typeof http>) =>
     http(endPoint, { ...config, token: user?.token });
 };
+
+// 联合类型
+let myFavoriteNumber: string | number;
+myFavoriteNumber = 8;
+myFavoriteNumber = "eight";
+
+// 类型别名
+type FavoriteNumber = string | number;
+let tomFavoriteNumber: FavoriteNumber;
+
+// interface和类型别名 大多数情况下可以互换
+
+// interface Person {
+//     name?: string
+// }
+
+// type Person = { name?: string }
+
+// 区别：interface无法处理联合类型/交叉类型 ；interface无法实现utility type，类型别名可以创造工具类型
+// type FavoriteNumber = string | number;
+// type FavoriteNumber = string & number;
