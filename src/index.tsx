@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { loadDevTools } from "jira-dev-tool";
+import "antd/dist/antd.less";
+// 务必在dev-tool后引入antd样式
 
 import "./index.css";
 import App from "./App";

@@ -43,7 +43,11 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     boostrapUser().then(setUser);
   });
 
-  return <AunthContext.Provider value={{ user, login, register, logout }} />;
+  return (
+    <AunthContext.Provider value={{ user, login, register, logout }}>
+      {children}
+    </AunthContext.Provider>
+  );
 };
 
 export const useAuth = () => {
