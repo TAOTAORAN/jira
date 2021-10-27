@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 
+import { Row } from "components/lib";
 import { useAuth } from "context/auth-context";
 import { ProjectList } from "screens/project-list";
 
@@ -8,7 +9,7 @@ export const AuthenticatedApp = () => {
   return (
     <Container>
       <Header>
-        <HeaderLeft>
+        <HeaderLeft gap={true}>
           <h3>Logo</h3>
           <h3>项目</h3>
           <h3>用户</h3>
@@ -47,10 +48,7 @@ const Header = styled.header`
   justify-content: space-between;
   background-color: gray;
 `;
-const HeaderLeft = styled.div`
-  display: flex;
-  align-items: center;
-`;
+const HeaderLeft = styled(Row)``;
 const HeaderRight = styled.div``;
 const Main = styled.main`
   grid-area: main;
