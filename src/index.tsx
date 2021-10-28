@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { loadDevTools } from "jira-dev-tool";
+import { loadServer, DevTools } from "jira-dev-tool";
 import "antd/dist/antd.less";
 // 务必在dev-tool后引入antd样式
 
@@ -9,10 +9,11 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { AppProviders } from "context";
 
-loadDevTools(() =>
+loadServer(() =>
   ReactDOM.render(
     <React.StrictMode>
       <AppProviders>
+        <DevTools />
         <App />
       </AppProviders>
     </React.StrictMode>,
